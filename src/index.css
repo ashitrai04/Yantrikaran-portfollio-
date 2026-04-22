@@ -1,0 +1,327 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg: #0a0d14;
+  --bg-soft: #11151f;
+  --line: rgba(255,255,255,0.06);
+  --line-strong: rgba(255,255,255,0.12);
+  --fg: #e7eaf0;
+  --fg-soft: rgba(231,234,240,0.7);
+  --accent: #38bdf8;
+  --accent-2: #818cf8;
+  --warm: #fb923c;
+}
+
+* { -webkit-font-smoothing: antialiased; }
+html, body, #root { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, sans-serif; }
+
+body {
+  background-image:
+    radial-gradient(900px 500px at 10% -10%, rgba(56,189,248,0.10), transparent 60%),
+    radial-gradient(700px 500px at 90% 0%, rgba(129,140,248,0.10), transparent 60%);
+  background-attachment: fixed;
+  transition: background-color 400ms ease, color 400ms ease;
+}
+
+::selection { background: rgba(56,189,248,0.35); color: #fff; }
+
+.font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; letter-spacing: -0.02em; }
+.font-mono    { font-family: 'JetBrains Mono', monospace; }
+
+.h-display {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+}
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--accent);
+}
+.eyebrow::before {
+  content: ''; height: 1px; width: 28px; background: linear-gradient(90deg, transparent, var(--accent));
+}
+
+.surface {
+  background: linear-gradient(180deg, rgba(17,21,31,0.82), rgba(10,13,20,0.82));
+  border: 1px solid var(--line);
+}
+.glass {
+  background: rgba(15,18,28,0.55);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid var(--line);
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1.5rem; border-radius: 999px;
+  background: linear-gradient(120deg, #38bdf8, #818cf8);
+  color: #050810; font-weight: 600;
+  box-shadow: 0 12px 40px -12px rgba(56,189,248,0.65);
+  transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+}
+.btn-primary:hover { transform: translateY(-1px); filter: brightness(1.05); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1.5rem; border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  color: var(--fg); font-weight: 500;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+.btn-ghost:hover { border-color: rgba(56,189,248,0.55); background: rgba(56,189,248,0.06); }
+
+.card {
+  position: relative; border-radius: 22px; overflow: hidden;
+  background: linear-gradient(180deg, rgba(27, 51, 114, 0.92), rgba(10,13,20,0.92));
+  border: 1px solid var(--line);
+  transition: transform 320ms cubic-bezier(0.2,0.8,0.2,1), border-color 280ms ease, box-shadow 320ms ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56,189,248,0.45);
+  box-shadow: 0 28px 60px -28px rgba(56,189,248,0.4);
+}
+.card::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx,50%) var(--my,0%), rgba(56,189,248,0.15), transparent 45%);
+  opacity: 0; transition: opacity 280ms ease;
+}
+.card:hover::after { opacity: 1; }
+
+.photo-card {
+  position: relative; border-radius: 22px; overflow: hidden;
+  border: 1px solid var(--line);
+  background: #151c38;
+}
+.photo-card img { transition: transform 700ms cubic-bezier(0.2,0.8,0.2,1); display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo-card:hover img { transform: scale(1.05); }
+.photo-card .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(5,8,16,0.55) 70%, rgba(5,8,16,0.92) 100%);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 50%, transparent 100%);
+}
+
+.chip {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.32rem 0.7rem; border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(56,189,248,0.32);
+  background: rgba(56,189,248,0.06);
+}
+.chip-warm { color: var(--warm); border-color: rgba(251,146,60,0.35); background: rgba(251,146,60,0.07); }
+.chip-soft { color: var(--fg-soft); border-color: var(--line-strong); background: rgba(255,255,255,0.03); }
+
+.text-gradient {
+  background: linear-gradient(120deg, #7dd3fc 0%, #38bdf8 35%, #c4b5fd 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.marquee { display: flex; width: max-content; animation: marquee 40s linear infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.dot-pulse { position: relative; width: 8px; height: 8px; border-radius: 999px; background: var(--accent); }
+.dot-pulse::after {
+  content: ''; position: absolute; inset: -6px; border-radius: 999px;
+  border: 1px solid rgba(56,189,248,0.5);
+  animation: ping 1.8s ease-out infinite;
+}
+@keyframes ping { 0%{transform:scale(0.6);opacity:1} 100%{transform:scale(1.8);opacity:0} }
+
+.sub-wash {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 60%, rgba(167,243,208,0.20), transparent 70%),
+    radial-gradient(ellipse 80% 60% at 30% 30%, rgba(125,211,252,0.22), transparent 65%),
+    linear-gradient(160deg, rgba(56,189,248,0.06), rgba(129,140,248,0.06));
+}
+
+/* Neutral 3D stage — softer / lighter background so the dark submarine pops.
+   Dial these two stops up/down to brighten or darken the panel.            */
+.stage {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 55%, rgba(255, 255, 255, 0.159), transparent 70%),
+    linear-gradient(180deg, #4d5c85 0%, #0a1d48 100%);
+}
+html.light .stage {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 55%, rgba(255, 255, 255, 0.306), transparent 70%),
+    linear-gradient(180deg, #f1f4fa 0%, #2b5aab 100%);
+}
+
+html.light {
+  color-scheme: light;
+  --bg: #e5e8ed;
+  --bg-soft: #f7f9fc;
+  --line: rgba(15,23,42,0.10);
+  --line-strong: rgba(15,23,42,0.18);
+  --fg: #0b1220;
+  --fg-soft: rgba(11,18,32,0.68);
+  --accent: #0369a1;
+  --accent-2: #4f46e5;
+}
+html.light body {
+  background-image:
+    radial-gradient(900px 500px at 10% -10%, rgba(56,189,248,0.20), transparent 60%),
+    radial-gradient(700px 500px at 90% 0%, rgba(129,140,248,0.14), transparent 60%),
+    linear-gradient(180deg, #eef2f8 0%, #e1e7f0 100%);
+}
+/* Darker surfaces in light mode so cards stand out from the page background */
+html.light .surface {
+  background: linear-gradient(180deg, #182e65, #4f5467);
+  border-color: rgba(15,23,42,0.18);
+  color: #e7eaf0;
+}
+html.light .glass {
+  background: rgba(255,255,255,0.78);
+  border-color: rgba(15,23,42,0.10);
+  backdrop-filter: blur(14px) saturate(180%);
+}
+/* Glass chips nested in dark surfaces / cards stay dark so white text is readable */
+html.light .surface .glass,
+html.light .card .glass {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.10);
+  color: #e7eaf0;
+}
+html.light .card {
+  background: linear-gradient(180deg, #a9a9af, #0c2664);
+  border-color: rgba(15,23,42,0.20);
+  color: #e7eaf0;
+  box-shadow: 0 14px 40px -18px rgba(15,23,42,0.30);
+}
+html.light .card:hover {
+  border-color: rgba(56,189,248,0.55);
+  box-shadow: 0 28px 60px -22px rgba(15,23,42,0.45);
+}
+/* When .surface or .card is dark in light mode, keep its inner text light */
+html.light .surface .text-white,
+html.light .card    .text-white { color: #ffffff !important; }
+html.light .surface .text-white\/85, html.light .card .text-white\/85 { color: rgba(255,255,255,0.88) !important; }
+html.light .surface .text-white\/80, html.light .card .text-white\/80 { color: rgba(255,255,255,0.85) !important; }
+html.light .surface .text-white\/75, html.light .card .text-white\/75 { color: rgba(255,255,255,0.80) !important; }
+html.light .surface .text-white\/70, html.light .card .text-white\/70 { color: rgba(255,255,255,0.76) !important; }
+html.light .surface .text-white\/65, html.light .card .text-white\/65 { color: rgba(255,255,255,0.72) !important; }
+html.light .surface .text-white\/60, html.light .card .text-white\/60 { color: rgba(255,255,255,0.68) !important; }
+html.light .surface .text-white\/55, html.light .card .text-white\/55 { color: rgba(255,255,255,0.62) !important; }
+html.light .surface .text-white\/50, html.light .card .text-white\/50 { color: rgba(255,255,255,0.58) !important; }
+html.light .surface .text-white\/45, html.light .card .text-white\/45 { color: rgba(255,255,255,0.55) !important; }
+html.light .surface .text-white\/40, html.light .card .text-white\/40 { color: rgba(255,255,255,0.50) !important; }
+html.light .surface .bg-white\/5,    html.light .card .bg-white\/5    { background-color: rgba(255,255,255,0.06) !important; }
+html.light .surface .bg-white\/10,   html.light .card .bg-white\/10   { background-color: rgba(255,255,255,0.10) !important; }
+html.light .surface .border-white\/5,  html.light .card .border-white\/5  { border-color: rgba(255,255,255,0.07) !important; }
+html.light .surface .border-white\/10, html.light .card .border-white\/10 { border-color: rgba(255,255,255,0.12) !important; }
+html.light .grid-bg {
+  background-image:
+    linear-gradient(rgba(15,23,42,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,0.05) 1px, transparent 1px);
+}
+html.light .text-gradient {
+  background: linear-gradient(120deg, #0369a1 0%, #0284c7 50%, #4f46e5 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+/* Text gradient inside dark surfaces / cards keeps the bright dark-mode palette */
+html.light .surface .text-gradient,
+html.light .card .text-gradient {
+  background: linear-gradient(120deg, #7dd3fc 0%, #38bdf8 35%, #c4b5fd 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+html.light .chip {
+  color: #0369a1;
+  border-color: rgba(2,132,199,0.32);
+  background: rgba(2,132,199,0.07);
+}
+
+html.light .text-white         { color: #0f172a !important; }
+html.light .text-white\/85     { color: rgba(15,23,42,0.85) !important; }
+html.light .text-white\/80     { color: rgba(15,23,42,0.82) !important; }
+html.light .text-white\/75     { color: rgba(15,23,42,0.78) !important; }
+html.light .text-white\/70     { color: rgba(15,23,42,0.72) !important; }
+html.light .text-white\/65     { color: rgba(15,23,42,0.68) !important; }
+html.light .text-white\/60     { color: rgba(15,23,42,0.62) !important; }
+html.light .text-white\/55     { color: rgba(15,23,42,0.58) !important; }
+html.light .text-white\/50     { color: rgba(15,23,42,0.55) !important; }
+html.light .text-white\/45     { color: rgba(15,23,42,0.50) !important; }
+html.light .text-white\/40     { color: rgba(15,23,42,0.50) !important; }
+html.light .text-white\/30     { color: rgba(15,23,42,0.42) !important; }
+html.light .bg-white\/5        { background-color: rgba(15,23,42,0.04) !important; }
+html.light .bg-white\/10       { background-color: rgba(15,23,42,0.07) !important; }
+html.light .border-white\/5    { border-color: rgba(15,23,42,0.06) !important; }
+html.light .border-white\/10   { border-color: rgba(15,23,42,0.10) !important; }
+html.light .border-white\/15   { border-color: rgba(15,23,42,0.12) !important; }
+
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 38px; width: 38px; border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255,255,255,0.04);
+  color: var(--fg);
+  transition: border-color 220ms ease, color 220ms ease, background 220ms ease;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ─── Light-mode chrome — Navbar + Footer render as dark panels so they
+   visually separate from the lighter page background, matching the cards. */
+html.light .nav-chrome,
+html.light header .md\:hidden.glass {
+  background: linear-gradient(180deg, rgba(24,31,53,0.92), rgba(16,22,38,0.92)) !important;
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #e7eaf0;
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  box-shadow: 0 12px 36px -18px rgba(15,23,42,0.45);
+}
+html.light footer {
+  background: linear-gradient(180deg, #182e65 0%, #0c1631 100%);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #e7eaf0;
+}
+html.light footer .border-t { border-color: rgba(255,255,255,0.08) !important; }
+
+/* Re-assert light text inside the dark Navbar + Footer panels */
+html.light header .nav-chrome .text-white,
+html.light footer .text-white { color: #ffffff !important; }
+html.light header .nav-chrome .text-white\/85, html.light footer .text-white\/85 { color: rgba(255,255,255,0.88) !important; }
+html.light header .nav-chrome .text-white\/80, html.light footer .text-white\/80 { color: rgba(255,255,255,0.85) !important; }
+html.light header .nav-chrome .text-white\/75, html.light footer .text-white\/75 { color: rgba(255,255,255,0.80) !important; }
+html.light header .nav-chrome .text-white\/70, html.light footer .text-white\/70 { color: rgba(255,255,255,0.76) !important; }
+html.light header .nav-chrome .text-white\/65, html.light footer .text-white\/65 { color: rgba(255,255,255,0.72) !important; }
+html.light header .nav-chrome .text-white\/60, html.light footer .text-white\/60 { color: rgba(255,255,255,0.68) !important; }
+html.light header .nav-chrome .text-white\/55, html.light footer .text-white\/55 { color: rgba(255,255,255,0.62) !important; }
+html.light header .nav-chrome .text-white\/50, html.light footer .text-white\/50 { color: rgba(255,255,255,0.58) !important; }
+html.light header .nav-chrome .text-white\/45, html.light footer .text-white\/45 { color: rgba(255,255,255,0.55) !important; }
+html.light header .nav-chrome .text-white\/40, html.light footer .text-white\/40 { color: rgba(255,255,255,0.50) !important; }
+html.light header .nav-chrome .bg-white\/5,    html.light footer .bg-white\/5    { background-color: rgba(255,255,255,0.06) !important; }
+html.light header .nav-chrome .bg-white\/8,    html.light footer .bg-white\/8    { background-color: rgba(255,255,255,0.08) !important; }
+html.light header .nav-chrome .bg-white\/10,   html.light footer .bg-white\/10   { background-color: rgba(255,255,255,0.10) !important; }
+html.light header .nav-chrome .border-white\/5,  html.light footer .border-white\/5  { border-color: rgba(255,255,255,0.07) !important; }
+html.light header .nav-chrome .border-white\/10, html.light footer .border-white\/10 { border-color: rgba(255,255,255,0.12) !important; }
+
+/* Theme toggle inside dark Navbar reads as a light-on-dark control */
+html.light header .theme-toggle {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.18);
+  color: #ffffff;
+}
+html.light header .theme-toggle:hover {
+  border-color: #7dd3fc;
+  color: #7dd3fc;
+  background: rgba(125,211,252,0.10);
+}
+
+section { scroll-margin-top: 96px; }
