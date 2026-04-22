@@ -6,7 +6,9 @@ import PageHero from '../components/PageHero.jsx'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { GIS_CAPS, GIS_PROJECTS } from '../data/content.js'
 
-const HERO_IMG = 'https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=1600&q=80&auto=format&fit=crop'
+import gisHeroImage from '../data/ride-into-orbit-secure.jpg'
+
+const HERO_IMG = gisHeroImage
 
 const SECTORS = [
   { icon: Satellite, label: 'Earth Observation', value: 'Sentinel · Landsat · GEDI' },

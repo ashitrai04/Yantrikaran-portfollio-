@@ -5,7 +5,9 @@ import PageTransition from '../components/PageTransition.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { COMPANY } from '../data/content.js'
 
-const TEAM_PHOTO = 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400&q=80&auto=format&fit=crop'
+import teamPhoto from '../data/team.jpeg'
+
+const TEAM_PHOTO = teamPhoto
 const LAB_PHOTO  = 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1200&q=80&auto=format&fit=crop'
 
 const VALUES = [
@@ -17,8 +19,8 @@ const VALUES = [
 const TIMELINE = [
   { year: '2024', title: 'Submarine Mk-I built',  text: 'First operational hybrid underwater drone delivered with Softgear Pvt. Ltd.' },
   { year: '2025', title: 'Yantrikaran founded',   text: 'Incorporated as a deep-tech engineering firm focused on robotics and geospatial AI.' },
-  { year: '2025', title: 'Andhra Pradesh stack',  text: 'Three GIS·AI systems delivered for the Government of Andhra Pradesh.' },
-  { year: '2026', title: 'PS-10 defence brief',   text: 'Reconnaissance prototype in active R&D for the PS-10 problem statement.' },
+  { year: '2025', title: 'Andhra Pradesh stack',  text: 'GIS·AI systems delivered for the Government of Andhra Pradesh across property and energy intelligence.' },
+  { year: '2026', title: 'Defence recce R&D',     text: 'Reconnaissance prototype currently under active R&D for defence use-cases.' },
 ]
 
 export default function AboutPage() {

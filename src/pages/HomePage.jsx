@@ -20,7 +20,7 @@ const featured = [
   GIS_PROJECTS[0],
   GIS_PROJECTS[1],
   ROBOTICS_PROJECTS[0],
-  GIS_PROJECTS[3],
+  GIS_PROJECTS[2],
 ]
 
 export default function HomePage() {

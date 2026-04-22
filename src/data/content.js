@@ -3,6 +3,15 @@ import {
   Satellite, Cpu, Layers, Radar
 } from 'lucide-react'
 
+import smartPropertyImage from './Smart Property.png'
+import renewableEnergyImage from './Renewable Energy Allocation System.jpg'
+import recceImage from './Recce.png'
+import submarineImage from './Submarine.jpg'
+import geospatialImage from './Geo spatial.jpg'
+import agricultureImage from './AGriculature.webp'
+import mk1Image from './Mk-I.jpg'
+import mk2Image from './Mk-II.jpg'
+
 export const COMPANY = {
   name: 'Yantrikaran Innovations',
   short: 'Yantrikaran',
@@ -22,7 +31,7 @@ export const COMPANY = {
     'Honoured by the Chief Ministers of Gujarat and Maharashtra',
     'Recognised by the Agriculture Minister of India',
     'Backed by the FITT Delhi Innovation Grant',
-    'Contributor on AI Kosh — India AI Mission open-dataset platform',
+    'Contributor on AI Kosh — India AI Mission open-dataset and Model platform',
   ],
 }
 
@@ -37,7 +46,7 @@ export const DIRECTIONS = [
     icon: Bot,
     accent: 'violet',
     href: '/robotics',
-    image: UNSPLASH('photo-1518837695005-2083093ee35b'),
+    image: submarineImage,
     capabilities: [
       'Hybrid underwater submarines and ROVs',
       'Edge-AI perception on Jetson / RK3588',
@@ -53,7 +62,7 @@ export const DIRECTIONS = [
     icon: Globe2,
     accent: 'cyan',
     href: '/gis',
-    image: UNSPLASH('photo-1614728263952-84ea256f9679'),
+    image: geospatialImage,
     capabilities: [
       'Sentinel-2 / SAR / GEDI processing on Google Earth Engine',
       'Land-use & land-cover classification with deep learning',
@@ -65,21 +74,11 @@ export const DIRECTIONS = [
 
 export const GIS_PROJECTS = [
   {
-    title: 'Andhra Pradesh Land Use Classification',
-    client: 'Govt. of Andhra Pradesh',
-    year: '2025',
-    icon: Map,
-    image: UNSPLASH('photo-1502920917128-1aa500764cbd'),
-    summary: 'Statewide land-use / land-cover classification using multi-temporal Sentinel-2 imagery and deep learning on Google Earth Engine.',
-    stack: ['Sentinel-2', 'Random Forest', 'GEE', 'PyTorch', 'QGIS'],
-    metric: { label: 'classification accuracy', value: '94%' },
-  },
-  {
     title: 'AI + GIS Smart Property Identification',
     client: 'Govt. of Andhra Pradesh',
     year: '2025',
     icon: Building2,
-    image: UNSPLASH('photo-1486325212027-8081e485255e'),
+    image: smartPropertyImage,
     summary: 'Automated property footprint extraction and ownership intelligence by fusing high-resolution satellite, cadastral and revenue datasets.',
     stack: ['Building footprints', 'YOLOv8', 'PostGIS', 'Mapbox'],
     metric: { label: 'parcels indexed', value: '2.4M+' },
@@ -89,20 +88,31 @@ export const GIS_PROJECTS = [
     client: 'Govt. of Andhra Pradesh',
     year: '2025',
     icon: Zap,
-    image: UNSPLASH('photo-1466611653911-95081537e5b7'),
+    image: renewableEnergyImage,
     summary: 'AI + GIS decision system that ranks land parcels for solar and wind suitability using slope, irradiance, grid distance and land-use constraints.',
     stack: ['MCDA', 'Solar / wind atlas', 'Open-source GIS', 'React + Mapbox GL'],
     metric: { label: 'parcels scored', value: '~1.1M' },
   },
   {
-    title: 'PS-10 Recce — Defence Reconnaissance Prototype',
-    client: 'Govt. PS-10 brief · R&D, not deployed',
+    title: 'Recce — Defence Reconnaissance Prototype',
+    client: 'Govt. defence brief · Under R&D',
     year: '2026',
     icon: Shield,
-    image: UNSPLASH('photo-1473968512647-3e447244af8f'),
-    summary: 'GIS + UAV reconnaissance prototype built for the PS-10 problem statement — terrain, vegetation, slope and route intelligence across six border districts. Currently in active R&D; field deployment pending.',
+    image: recceImage,
+    summary: 'GIS + UAV reconnaissance prototype for terrain, vegetation, slope and route intelligence across six border districts. Currently under active R&D; field deployment pending.',
     stack: ['Mapbox GL', 'Sentinel-2', 'GEE', 'UAV photogrammetry', 'React'],
     metric: { label: 'AOIs prototyped', value: '6 districts' },
+    inProgress: true,
+  },
+  {
+    title: 'GIS-based Agriculture Land Classification',
+    client: 'Applied agriculture intelligence · Under R&D',
+    year: '2026',
+    icon: Map,
+    image: agricultureImage,
+    summary: 'Agriculture land classification pipeline using Sentinel-2 multispectral imagery and SMAP soil-moisture analysis for crop and suitability mapping.',
+    stack: ['Sentinel-2', 'SMAP', 'GEE', 'PyTorch', 'QGIS'],
+    metric: { label: 'analysis coverage', value: 'multi-district pilot' },
     inProgress: true,
   },
 ]
@@ -113,7 +123,7 @@ export const ROBOTICS_PROJECTS = [
     client: 'Softgear Pvt. Ltd.',
     year: '2024 · 2025',
     icon: Waves,
-    image: UNSPLASH('photo-1518837695005-2083093ee35b'),
+    image: mk1Image,
     summary: 'Operational hybrid underwater drone for inspection and survey, with onboard computer-vision and acoustic telemetry.',
     stack: ['ROS', 'Edge AI', 'Acoustic telemetry', 'Sensor fusion'],
     metric: { label: 'depth class', value: '50 m' },
@@ -124,7 +134,7 @@ export const ROBOTICS_PROJECTS = [
     client: 'Yantrikaran Innovations',
     year: '2025',
     icon: Waves,
-    image: UNSPLASH('photo-1559827260-dc66d52bef19'),
+    image: mk2Image,
     summary: 'Earlier-generation submarine platform — the precursor build that informed the current Mk-I refinements and ongoing payload research.',
     stack: ['ROS', 'Sensor fusion', 'Underwater telemetry'],
     metric: { label: 'depth class', value: '40 m' },
