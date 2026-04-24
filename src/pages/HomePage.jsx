@@ -70,8 +70,8 @@ export default function HomePage() {
             >
               {[
                 { k: '2', v: 'verticals' },
-                { k: '7+', v: 'deployed projects' },
-                { k: '3', v: 'govt. recognitions' },
+                { k: '7+', v: 'Working projects' },
+                { k: '3+', v: 'govt. recognitions' },
               ].map((s) => (
                 <div key={s.v} className="surface rounded-xl p-4">
                   <div className="font-display text-3xl text-white">{s.k}</div>
@@ -96,7 +96,7 @@ export default function HomePage() {
                 SUBMARINE MK-I · DRAG TO ROTATE
               </div>
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between font-mono text-[10px] tracking-[0.25em] text-white/60">
-                <span>DEPTH · 50 M</span>
+                <span>DEPTH · 40 M</span>
                 <span className="flex items-center gap-2"><span className="dot-pulse" /> TELEMETRY ONLINE</span>
               </div>
             </div>

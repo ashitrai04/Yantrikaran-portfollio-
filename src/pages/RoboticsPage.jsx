@@ -38,7 +38,7 @@ const MK3_TUNING = {
 }
 
 const SPECS = [
-  { icon: Gauge, label: 'Depth class',      value: '50 m' },
+  { icon: Gauge, label: 'Depth class',      value: '40 m' },
   { icon: Cpu,   label: 'Onboard compute',  value: 'Jetson Orin' },
   { icon: Wrench, label: 'Build iteration', value: 'Mk-I · Mk-II · Mk-III' },
 ]
@@ -85,7 +85,7 @@ export default function RoboticsPage() {
               tuning={MK1_TUNING}
               label="MK-I · DRAG TO ROTATE · SCROLL TO ZOOM"
               badge={<>
-                <span>HYBRID · 6 DOF</span>
+                <span>HYBRID · 4 DOF</span>
                 <span className="flex items-center gap-2"><span className="dot-pulse" /> TELEMETRY ONLINE</span>
               </>}
             />
@@ -141,7 +141,7 @@ export default function RoboticsPage() {
                 MK-II · DRAG TO ROTATE
               </div>
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between font-mono text-[10px] tracking-[0.25em] text-white/60">
-                <span>HYBRID · 4 DOF</span>
+                <span>HYBRID · 6 DOF</span>
                 <span>2025</span>
               </div>
             </div>
@@ -169,7 +169,7 @@ export default function RoboticsPage() {
                 Hardware in active development; preview model shown.
               </p>
               <div className="mt-7 flex flex-wrap gap-2">
-                {['Modular payload', 'Brushless thrusters', 'Edge AI', '6 h endurance', 'Cooperative SLAM'].map((t) => (
+                {['Modular payload', 'Brushless thrusters', 'Edge AI', '6h+ endurance', 'Cooperative SLAM'].map((t) => (
                   <span key={t} className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-white/70">{t}</span>
                 ))}
               </div>

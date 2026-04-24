@@ -6,9 +6,12 @@ import PageHero from '../components/PageHero.jsx'
 import { COMPANY } from '../data/content.js'
 
 import teamPhoto from '../data/team.jpeg'
+import achievementPhoto from '../data/achivement.jpeg'
+import robofestPhoto from '../data/robofest4.0.jpeg'
 
 const TEAM_PHOTO = teamPhoto
-const LAB_PHOTO  = 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1200&q=80&auto=format&fit=crop'
+const LAB_PHOTO  = achievementPhoto
+const ROBOFEST_PHOTO = robofestPhoto
 
 const VALUES = [
   { icon: Compass, title: 'Engineering-first', text: 'We measure ourselves on systems that ship and operate, not slide decks.' },
@@ -17,9 +20,9 @@ const VALUES = [
 ]
 
 const TIMELINE = [
-  { year: '2024', title: 'Submarine Mk-I built',  text: 'First operational hybrid underwater drone delivered with Softgear Pvt. Ltd.' },
+  { year: '2024', title: 'Submarine Mk-I built',  text: 'Our first  hybrid underwater drone made  with Softgear Pvt. Ltd.' },
   { year: '2025', title: 'Yantrikaran founded',   text: 'Incorporated as a deep-tech engineering firm focused on robotics and geospatial AI.' },
-  { year: '2025', title: 'Andhra Pradesh stack',  text: 'GIS·AI systems delivered for the Government of Andhra Pradesh across property and energy intelligence.' },
+  { year: '2025', title: 'Andhra Pradesh stack',  text: 'GIS·AI systems Worked for the Government of Andhra Pradesh across property and energy intelligence.' },
   { year: '2026', title: 'Defence recce R&D',     text: 'Reconnaissance prototype currently under active R&D for defence use-cases.' },
 ]
 
@@ -57,14 +60,12 @@ export default function AboutPage() {
             <div className="photo-card h-44">
               <img src={LAB_PHOTO} alt="Lab" loading="lazy" />
               <div className="overlay" />
-              <div className="absolute bottom-3 left-3 font-mono text-[9px] tracking-[0.3em] text-white/85">LAB</div>
+              <div className="absolute bottom-3 left-3 font-mono text-[9px] tracking-[0.3em] text-white/85">ACHIEVEMENT</div>
             </div>
-            <div className="surface rounded-[22px] h-44 p-5 flex flex-col justify-between">
-              <Trophy size={20} className="text-sky-300" />
-              <div>
-                <div className="font-display text-3xl text-white">3</div>
-                <div className="mt-1 font-mono text-[10px] tracking-[0.25em] text-white/45 uppercase">government honours</div>
-              </div>
+            <div className="photo-card h-44">
+              <img src={ROBOFEST_PHOTO} alt="Robofest 4.0" loading="lazy" />
+              <div className="overlay" />
+              <div className="absolute bottom-3 left-3 font-mono text-[9px] tracking-[0.3em] text-white/85">GOVERNMENT HONOURS</div>
             </div>
           </div>
         </div>

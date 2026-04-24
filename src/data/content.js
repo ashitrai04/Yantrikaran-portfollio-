@@ -11,6 +11,7 @@ import geospatialImage from './Geo spatial.jpg'
 import agricultureImage from './AGriculature.webp'
 import mk1Image from './Mk-I.jpg'
 import mk2Image from './Mk-II.jpg'
+import mk3Image from './Screenshot 2026-04-24 093740.jpg'
 
 export const COMPANY = {
   name: 'Yantrikaran Innovations',
@@ -80,8 +81,8 @@ export const GIS_PROJECTS = [
     icon: Building2,
     image: smartPropertyImage,
     summary: 'Automated property footprint extraction and ownership intelligence by fusing high-resolution satellite, cadastral and revenue datasets.',
-    stack: ['Building footprints', 'YOLOv8', 'PostGIS', 'Mapbox'],
-    metric: { label: 'parcels indexed', value: '2.4M+' },
+    stack: ['Building footprints', 'YOLOv8', 'PostGIS', 'Mapbox', 'SegFormer'],
+    metric: { label: 'parcels indexed', value: '10M+' },
   },
   {
     title: 'Renewable Energy Allocation System',
@@ -90,7 +91,7 @@ export const GIS_PROJECTS = [
     icon: Zap,
     image: renewableEnergyImage,
     summary: 'AI + GIS decision system that ranks land parcels for solar and wind suitability using slope, irradiance, grid distance and land-use constraints.',
-    stack: ['MCDA', 'Solar / wind atlas', 'Open-source GIS', 'React + Mapbox GL'],
+    stack: ['SegFormer', 'Solar / wind atlas', 'Open-source GIS', 'XGBoost', 'Mapbox'],
     metric: { label: 'parcels scored', value: '~1.1M' },
   },
   {
@@ -126,7 +127,7 @@ export const ROBOTICS_PROJECTS = [
     image: mk1Image,
     summary: 'Operational hybrid underwater drone for inspection and survey, with onboard computer-vision and acoustic telemetry.',
     stack: ['ROS', 'Edge AI', 'Acoustic telemetry', 'Sensor fusion'],
-    metric: { label: 'depth class', value: '50 m' },
+    metric: { label: 'depth class', value: '40 m' },
     glb: '/sub-mk1.glb',
   },
   {
@@ -145,7 +146,7 @@ export const ROBOTICS_PROJECTS = [
     client: 'Yantrikaran Innovations',
     year: '2026',
     icon: Waves,
-    image: UNSPLASH('photo-1551244072-5d12893278ab'),
+    image: mk3Image,
     summary: 'Next-generation platform with extended endurance, modular payload bay and improved hydrodynamics. Hardware in active development.',
     stack: ['Modular payload', 'Brushless thrusters', 'Edge AI', 'Cooperative SLAM'],
     metric: { label: 'target endurance', value: '6 h' },
